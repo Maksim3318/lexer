@@ -45,7 +45,6 @@ namespace Parse {
 
         ASSERT_EQUAL(lexer.CurrentToken(), Token(TokenType::Number{42}));
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Number{15}));
-        // ÐžÑ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ñ‡Ð¸ÑÐ»Ð° Ñ„Ð¾Ñ€Ð¼Ð¸Ñ€ÑƒÑŽÑ‚ÑÑ Ð½Ð° ÑÑ‚Ð°Ð¿Ðµ ÑÐ¸Ð½Ñ‚Ð°ÐºÑÐ¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð°Ð½Ð°Ð»Ð¸Ð·Ð°
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Char{'-'}));
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Number{53}));
     }
@@ -162,8 +161,6 @@ x = 1
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Char{'='}));
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Number{2}));
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Newline{}));
-        // ÐŸÑƒÑÑ‚Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°, ÑÐ¾ÑÑ‚Ð¾ÑÑ‰Ð°Ñ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¸Ð· Ð¿Ñ€Ð¾Ð±ÐµÐ»ÑŒÐ½Ñ‹Ñ… ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² Ð½Ðµ Ð¼ÐµÐ½ÑÐµÑ‚ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿,
-        // Ð¿Ð¾ÑÑ‚Ð¾Ð¼Ñƒ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð°Ñ Ð»ÐµÐºÑÐµÐ¼Ð° â€” ÑÑ‚Ð¾ Id, Ð° Ð½Ðµ Dedent
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Id{"z"}));
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Char{'='}));
         ASSERT_EQUAL(lexer.NextToken(), Token(TokenType::Number{3}));
